@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+      window.onload = function () {
+        var chart1 = new CanvasJS.Chart("chartContainer1", {
+          theme: "light1",
+          animationEnabled: true,
+         
+          subtitles: [
+            {
+              text: "Payment",
+              fontSize: 16,
+            },
+          ],
+          data: [
+            {
+              type: "pie",
+              indexLabelFontSize: 18,
+              radius: 80,
+              indexLabel: "{label} - {y}",
+              yValueFormatString: '###0""',
+              click: explodePie,
+              dataPoints: [
+                { y: 834, label: "IME Pay" },
+                { y: 186, label: "No Connected" },
+                { y: 753, label: "IMR Remit" }               
+              ],
+            },
+          ],
+        });
+        chart1.render();
+
+        var chart2 = new CanvasJS.Chart("chartContainer2", {
+          theme: "light2",
+          animationEnabled: true,
+         
+          subtitles: [
+            {
+              text: "Required",
+              fontSize: 16,
+            },
+          ],
+          data: [
+            {
+              type: "pie",
+              indexLabelFontSize: 18,
+              radius: 80,
+              indexLabel: "{label} - {y}",
+              yValueFormatString: '###0.0""',
+              click: explodePie,
+              dataPoints: [
+                { y: 75, label: "Urgent" },
+                { y: 25, label: "High" },
+              
+              ],
+            },
+          ],
+        });
+        chart2.render();
+
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+          theme: "light3",
+          animationEnabled: true,
+        
+          subtitles: [
+            {
+              text: "Process",
+              fontSize: 16,
+            },
+          ],
+          data: [
+            {
+              type: "pie",
+              indexLabelFontSize: 18,
+              radius: 80,
+              indexLabel: "{label} - {y}",
+              yValueFormatString: '###""',
+              click: explodePie,
+              dataPoints: [
+                { y: 80, label: "In Process" },
+                { y: 7, label: "Closed" },
+                { y: 3, label: "Rised" },
+                { y: 10, label: "Call Not Connected" }
+              ],
+            },
+          ],
+        });
+        chart3.render();
+
+        function explodePie(e) {
+          for (var i = 0; i < e.dataSeries.dataPoints.length; i++) {
+            if (i !== e.dataPointIndex)
+              e.dataSeries.dataPoints[i].exploded = false;
+          }
+        }
+      };
+    </script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-name">
+         <a href="index.html">  <img src="https://ekghanti.com.np/img/logoTop.svg" alt="" /></a>
+      </div>
+
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="#">
+              <i class="uil uil-estate"></i>
+              <button class="link-name">main dashboard</button>
+            </a>
+          </li>
+          <li>
+            <a href="user.html">
+                <i class="fa-regular fa-user"></i>
+              <button class="link-name">user</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fa-solid fa-user-group"></i>
+              <button class="link-name">group</button>
+            </a>
+          </li>
+          <li>
+             <a href="project.html">
+              <i class="uil uil-thumbs-up"></i>
+              <button class="link-name">project</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fa-solid fa-chart-simple"></i>
+              <button class="link-name" >ticket status</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-share"></i>
+              <button class="link-name">role</button>
+            </a>
+          </li>
+          <li>
+            <a href="Ticket.html">
+                <i class="fa-sharp fa-solid fa-ticket"></i>
+              <button class="link-name">ticket</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                <i class="fa-sharp fa-light fa-comment-sms"></i>
+              <button class="link-name">SMS/Email</button>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="logout-mode">
+          <li>
+            <a href="#">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="dashboard">
+      <section class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <div class="search-box">
+          <i class="uil uil-search"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+
+        <img src="Images/profile.jpg" alt="" />
+      </section>
+
+      <section class="main__wrapper">
+        <div class="main__assign">
+          <div class="assign">
+            <span>assign by:</span>
+            <input type="text" placeholder="----" />
+          </div>
+          <div class="assign">
+            <span>group:</span>
+            <input type="text" placeholder="----" />
+          </div>
+          <div class="assign">
+            <span>assigned to:</span>
+            <textarea id="comment" name="comment" class="input-alt"></textarea>
+          </div>
+        </div>
+        <div class="project">
+          <div class="assign">
+            <span>project</span>
+            <select type="text" placeholder="----">
+              <option>select project</option>
+            </select>
+          </div>
+          <div class="assign">
+            <span>vertical</span>
+            <select type="text" placeholder="----">
+              <option>loding.. verticle</option>
+            </select>
+          </div>
+          <div class="assign">
+            <span>Sub-vertical</span>
+            <select id="comment" name="comment" +>
+              <option>loding.. verticle</option>
+            </select>
+          </div>
+        </div>
+        <div class="date">
+          <div class="assign">
+            <span>form</span>
+            <input type="date" />
+          </div>
+          <div class="assign">
+            <span>to</span>
+            <input type="date" />
+          </div>
+          <div class="assign">
+            <span>ticket status:</span>
+            <input type="text" placeholder="----" />
+          </div>
+          <div class="main__button">
+            <button>search</button>
+            <button>clear</button>
+            <button>export</button>
+            <button>view tickts</button>
+          </div>
+        </div>
+      </section>
+      <section class="main__pie">
+        <div class="pie__wrapper">
+          <div
+            id="chartContainer1"
+            style="height: 300px; width: 33%; display: inline-block"
+          ></div>
+          <div
+            id="chartContainer2"
+            style="height: 300px; width: 33%; display: inline-block"
+          ></div>
+          <div
+            id="chartContainer3"
+            style="height: 300px; width: 33%; display: inline-block"
+          ></div>
+        </div>
+      </section>
+    </body>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

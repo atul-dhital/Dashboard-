@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <style>
+    
+  </style>
+  <body>
+    <nav>
+      <div class="logo-name">
+      <a href="index.html">  <img src="https://ekghanti.com.np/img/logoTop.svg" alt="" /></a>
+      </div>
+
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+             <a href="index.html">
+              <i class="uil uil-thumbs-up"></i>
+              <button class="link-name">project</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              <button class="link-name">user</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-user-group"></i>
+              <button class="link-name">group</button>
+            </a>
+          </li>
+          <li>
+             <a href="project.html">
+              <i class="uil uil-thumbs-up"></i>
+              <button class="link-name">project</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-chart-simple"></i>
+              <button class="link-name">ticket status</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-share"></i>
+              <button class="link-name">role</button>
+            </a>
+          </li>
+          <li>
+            <a href="Ticket.html">
+              <i class="fa-sharp fa-solid fa-ticket"></i>
+              <button class="link-name">ticket</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-sharp fa-light fa-comment-sms"></i>
+              <button class="link-name">SMS/Email</button>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="logout-mode">
+          <li>
+            <a href="#">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="dashboard">
+      <section class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <div class="search-box">
+          <i class="uil uil-search"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+
+        <img src="Images/profile.jpg" alt="" />
+      </section>
+      <form>
+        <label for="username"><i class="fas fa-user"></i> Username:</label>
+        <input type="text" id="username" name="username" /><br /><br />
+
+        <label for="password"><i class="fas fa-lock"></i> Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+
+        <button type="submit"><i class="fas fa-user-plus"></i> Add User</button>
+      </form>
+
+      <h2>Delete User <i class="fas fa-user-times"></i></h2>
+      <form>
+        <label for="delete-username"
+          ><i class="fas fa-user"></i> Username:</label
+        >
+        <input
+          type="text"
+          id="delete-username"
+          name="delete-username"
+        /><br /><br />
+
+        <button type="submit"><i class="fas fa-trash"></i> Delete User</button>
+      </form>
+
+      <h2>User Profile <i class="fas fa-user-circle"></i></h2>
+      <form>
+        <label for="profile-username"
+          ><i class="fas fa-user"></i> Username:</label
+        >
+        <input
+          type="text"
+          id="profile-username"
+          name="profile-username"
+        /><br /><br />
+
+        <button type="submit">
+          <i class="fas fa-search"></i> View Profile
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

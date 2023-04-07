@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      const tableContainer = document.querySelector(".table-container");
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      tableContainer.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - tableContainer.offsetLeft;
+        scrollLeft = tableContainer.scrollLeft;
+      });
+
+      tableContainer.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+
+      tableContainer.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+
+      tableContainer.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - tableContainer.offsetLeft;
+        const walk = (x - startX) * 3;
+        tableContainer.scrollLeft = scrollLeft - walk;
+      });
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-name">
+        <a href="index.html"> <img src="https://ekghanti.com.np/img/logoTop.svg" alt="" /></a>
+      </div>
+
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="index.html">
+              <i class="uil uil-estate"></i>
+              <button class="link-name">main dashboard</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              <button class="link-name">user</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-user-group"></i>
+              <button class="link-name">group</button>
+            </a>
+          </li>
+          <li>
+            <a href="project.html">
+              <i class="uil uil-thumbs-up"></i>
+              <button class="link-name">project</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-chart-simple"></i>
+              <button class="link-name">ticket status</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-share"></i>
+              <button class="link-name">role</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-sharp fa-solid fa-ticket"></i>
+              <button class="link-name">ticket</button>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-sharp fa-light fa-comment-sms"></i>
+              <button class="link-name">SMS/Email</button>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="logout-mode">
+          <li>
+            <a href="#">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="dashboard">
+      <section class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <div class="search-box">
+          <i class="uil uil-search"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+
+        <img src="Images/profile.jpg" alt="" />
+      </section>
+      <section class="table__wrap">
+      <table class="ticket__table">
+        <thead class="table__heading">
+          <tr class="table__row">
+            <th class="table__heading-cell">Ticket ID</th>
+            <th class="table__heading-cell">Agent/Customer</th>
+            <th class="table__heading-cell">Wallet ID</th>
+            <th class="table__heading-cell">Created</th>
+            <th class="table__heading-cell">Date</th>
+            <th class="table__heading-cell">Time</th>
+            <th class="table__heading-cell">Router</th>
+            <th class="table__heading-cell">Source</th>
+            <th class="table__heading-cell">Created By</th>
+            <th class="table__heading-cell">Project</th>
+            <th class="table__heading-cell">Vertical</th>
+            <th class="table__heading-cell">Sub-vertical</th>
+            <th class="table__heading-cell"></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tbody>
+          <tr class="table__row">
+            <td class="table__cell">1234</td>
+            <td class="table__cell">Agent</td>
+            <td class="table__cell">56789</td>
+            <td class="table__cell">2023-04-01</td>
+            <td class="table__cell">14:30:00</td>
+            <td class="table__cell">Customer Support</td>
+            <td class="table__cell">Email</td>
+            <td class="table__cell">John Doe</td>
+            <td class="table__cell">Project A</td>
+            <td class="table__cell">Vertical 1</td>
+            <td class="table__cell">Sub-Vertical A</td>
+            <td class="table__cell">
+              <button class="table__button table__button--hide">
+                <i class="fas fa-eye-slash"></i>
+              </button>
+              <button class="table__button table__button--edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="table__button table__button--delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button class="table__button table__button--share">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">5678</td>
+            <td class="table__cell">Customer</td>
+            <td class="table__cell">12345</td>
+            <td class="table__cell">2023-04-03</td>
+            <td class="table__cell">10:45:00</td>
+            <td class="table__cell">Payment</td>
+            <td class="table__cell">Website</td>
+            <td class="table__cell">Jane Smith</td>
+            <td class="table__cell">Project B</td>
+            <td class="table__cell">Vertical 2</td>
+            <td class="table__cell">Sub-Vertical B</td>
+            <td class="table__cell">
+              <button class="table__button table__button--hide">
+                <i class="fas fa-eye-slash"></i>
+              </button>
+              <button class="table__button table__button--edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="table__button table__button--delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button class="table__button table__button--share">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    </main>
+  </body>
+</html>
